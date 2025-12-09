@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Message</title>
+
+<style>
+body {
+    background: linear-gradient(135deg, #ff8ad4, #bb00ff);
+    font-family: "Tajawal", sans-serif;
+    padding: 30px;
+    overflow-x: hidden;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+button {
+    display: block;
+    margin: 25px auto;
+    padding: 15px 25px;
+    background: #ff4fa0;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* الثلج */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 20px;
+  animation: fall 7s linear infinite;
+}
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="text"></div>
+
+<button onclick="next()">اضغط هنا</button>
+
+<script>
+// النص الكامل
+let msg = `أنا يمكن ماقولتش كتير بس قلبي من جوّه بينده عليك كل يوم ووجودك في حياتي مش صدفة ده رزق محسوب بحنان ومن يوم ما عرفتك وأنا بحس إن الدنيا بقت أهدى وألطف وفي حضنك بس بحس إن العالم ملوش صوت غير دقّة قلبك وأنا مش محتاج مناسبة عشان أقولك إنك أغلى حاجة حصلتلي وكل لحظة تفكير فيك بتطمن قلبي وكإنك بتحضّني من بعيد وبحبك بطريقة هادية بس ثابتة زي نور شامعة مش بيطفي وانت أغنية هادية بس بتعلّق في الروح ومابتروحش وربنا جمع قلبي بقلبك والباقي تفاصيل جميلة بنتعلمها سوا وأنا مبقتش أشوف الجمال في الدنيا غير بعينيك وضحكتك لوحدها كفيلة تغيّر يومي كله ومابرتاحش غير وأنا سامع صوتك ولو حتى في خيالي وانت مش بس حب انت وطن ليا ونفسي الزمن يهدى شوية عشان أعرف أعيّش كل لحظة معاك وأنا مش عايز من الدنيا غير إنك تفضل جنبي على طول.`;
+
+let i = 0;
+
+function type() {
+  if (i < msg.length) {
+    document.getElementById("text").innerHTML += msg.charAt(i);
+    i++;
+    setTimeout(type, 45);
+  }
+}
+type();
+
+function next() {
+  window.location.href = "memories.html";
+}
+
+// الثلج
+setInterval(() => {
+  let s = document.createElement("div");
+  s.className = "snowflake";
+  s.innerHTML = "❄";
+  s.style.left = Math.random() * window.innerWidth + "px";
+  s.style.fontSize = (Math.random()*15+10) + "px";
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 7000);
+}, 150);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas Login</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #5c0099, #ff66c4);
+    font-family: "Tajawal", sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* الحاوية */
+.container {
+    width: 90%;
+    max-width: 420px;
+    margin: 70px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.2);
+}
+
+/* شجرة الكريسماس */
+.tree {
+    font-size: 70px;
+    animation: sway 2s infinite ease-in-out;
+}
+@keyframes sway {
+  0% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+/* الباسورد */
+input {
+    width: 90%;
+    padding: 15px;
+    border: 2px solid #ff4fa0;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* زرار الفتح */
+button {
+    margin-top: 20px;
+    padding: 15px 25px;
+    border: none;
+    background: linear-gradient(90deg,#ff2fa0,#a000ff);
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* الإيموجي اللي تحت */
+.emojis {
+    margin-top: 30px;
+    font-size: 35px;
+}
+.emojis span {
+    display: inline-block;
+    animation: wave 2s infinite ease-in-out;
+}
+@keyframes wave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* الثلج */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 20px;
+  animation: fall 7s linear infinite;
+}
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>2026</h2>
+    <div class="tree">🎄</div>
+    <h1>Christmas</h1>
+    <p>enter password</p>
+
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="check()">🔓 unlock</button>
+
+    <div id="error" style="color:red; margin-top:15px; font-size:18px;"></div>
+
+    <div class="emojis">
+        <span>⛄</span>
+        <span>💝</span>
+        <span>🎅</span>
+        <span>🎁</span>
+        <span>🎄</span>
+    </div>
+</div>
+
+<script>
+function check() {
+    let p = document.getElementById("pass").value;
+    if (p == "1532005") {
+        window.location.href = "love.html";
+    } else {
+        document.getElementById("error").innerHTML = "عيد ميلادك غلط يا قلب 🎄💘";
+    }
+}
+
+// تساقط الثلج
+setInterval(() => {
+  let s = document.createElement("div");
+  s.className = "snowflake";
+  s.innerHTML = "❄";
+  s.style.left = Math.random() * window.innerWidth + "px";
+  s.style.fontSize = (Math.random()*15+10) + "px";
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 7000);
+}, 150);
+</script>
+
+</body>
+</html>
