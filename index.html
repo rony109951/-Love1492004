@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -12,7 +13,7 @@
 
 /* ----------------------- BODY ------------------------ */
 body {
-    font-family:  Dancing Script , cursive;
+    font-family: Dancing Script, cursive;
     min-height: 100vh;
     background: linear-gradient(135deg,#1a0033,#330066,#4d0099,#6600cc,#7f00ff);
     overflow-x: hidden;
@@ -56,7 +57,6 @@ body {
 }
 
 /* --------------------- DROP BULBS ------------------- */
-/* top row */
 .bulbs-top {
     position: fixed;
     width: 100%;
@@ -67,8 +67,6 @@ body {
     pointer-events: none;
     padding: 6px 20px;
 }
-
-/* side rows */
 .side-bulbs-right,
 .side-bulbs-left {
     position: fixed;
@@ -84,7 +82,6 @@ body {
 .side-bulbs-right { right: 6px; align-items: center; }
 .side-bulbs-left { left: 6px; align-items: center; }
 
-/* the bulb */
 .bulb {
     width: 18px;
     height: 30px;
@@ -96,8 +93,6 @@ body {
     animation: glow 1.8s infinite alternate, sway 3.6s ease-in-out infinite;
     filter: drop-shadow(0 0 8px currentColor);
 }
-
-/* metal cap */
 .bulb::before {
     content: "";
     position: absolute;
@@ -108,8 +103,6 @@ body {
     background: #444;
     border-radius: 3px;
 }
-
-/* thin cord above caps */
 .bulb::after {
     content: "";
     position: absolute;
@@ -120,7 +113,6 @@ body {
     background: rgba(255,255,255,0.06);
 }
 
-/* glow + sway */
 @keyframes glow {
     0% { opacity: 0.45; transform: scale(0.92); }
     100% { opacity: 1; transform: scale(1); }
@@ -145,7 +137,6 @@ body {
     border: 2px solid rgba(255,255,255,0.15);
 }
 
-/* tree emoji (now horizontal sway) */
 .christmas-tree {
     font-size: 84px;
     margin-bottom: 6px;
@@ -162,7 +153,6 @@ body {
     100% { transform: translateX(0) rotate(-1deg); }
 }
 
-/* year tag */
 .year-tag {
     display: inline-block;
     padding: 10px 24px;
@@ -174,9 +164,8 @@ body {
     box-shadow: 0 8px 18px rgba(127,0,255,0.28);
 }
 
-/* heading */
 h1 {
-    font-family:  Great Vibes , cursive;
+    font-family: Great Vibes, cursive;
     font-size: 3.2em;
     background: linear-gradient(135deg,#ff0080,#7f00ff);
     -webkit-background-clip: text;
@@ -189,7 +178,6 @@ h1 {
     margin-bottom: 18px;
 }
 
-/* input + button */
 .password-input {
     width: 100%;
     padding: 14px 18px;
@@ -197,7 +185,6 @@ h1 {
     border: 3px solid #bb00ff;
     text-align: center;
     font-size: 1.2em;
-    box-sizing: border-box;
     margin-top: 10px;
     background: rgba(255,255,255,0.95);
 }
@@ -218,7 +205,7 @@ h1 {
     font-size: 1.05em;
 }
 
-/* --------------------- WAVES (bottom) ------------------ */
+/* Waves Bottom */
 .waves {
     position: fixed;
     left: 0;
@@ -235,27 +222,38 @@ h1 {
     width: 200%;
     height: 100px;
     top: 0;
-    background-repeat: repeat-x;
-    transform: translate3d(0,0,0);
     opacity: 0.7;
 }
 
-/* SVG data-URI backgrounds for nicer waves */
-.wave.wave1 { background-image: url("data:image/svg+xml;utf8,<svg xmlns= http://www.w3.org/2000/svg  viewBox= 0 0 1200 100  preserveAspectRatio= none ><path d= M0 40 C150 80 350 0 600 40 C850 80 1050 0 1200 40 L1200 100 L0 100 Z  fill= %23ffffff /></svg>"); bottom: 22px; opacity:0.12; animation: waveAnim 10s linear infinite; }
-.wave.wave2 { background-image: url("data:image/svg+xml;utf8,<svg xmlns= http://www.w3.org/2000/svg  viewBox= 0 0 1200 100  preserveAspectRatio= none ><path d= M0 30 C200 70 400 0 600 30 C800 60 1000 0 1200 30 L1200 100 L0 100 Z  fill= %23ffffff /></svg>"); bottom: 12px; opacity:0.16; animation: waveAnim 14s linear infinite reverse; }
-.wave.wave3 { background-image: url("data:image/svg+xml;utf8,<svg xmlns= http://www.w3.org/2000/svg  viewBox= 0 0 1200 100  preserveAspectRatio= none ><path d= M0 20 C250 60 500 0 600 20 C700 40 950 0 1200 20 L1200 100 L0 100 Z  fill= %23ffffff /></svg>"); bottom: 2px; opacity:0.22; animation: waveAnim 8s linear infinite; }
+.wave.wave1 {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns= http://www.w3.org/2000/svg  viewBox= 0 0 1200 100  preserveAspectRatio= none ><path d= M0 40 C150 80 350 0 600 40 C850 80 1050 0 1200 40 L1200 100 L0 100 Z  fill= %23ffffff /></svg>");
+    bottom: 22px;
+    opacity:0.12;
+    animation: waveAnim 10s linear infinite;
+}
+.wave.wave2 {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns= http://www.w3.org/2000/svg  viewBox= 0 0 1200 100  preserveAspectRatio= none ><path d= M0 30 C200 70 400 0 600 30 C800 60 1000 0 1200 30 L1200 100 L0 100 Z  fill= %23ffffff /></svg>");
+    bottom: 12px;
+    opacity:0.16;
+    animation: waveAnim 14s linear infinite reverse;
+}
+.wave.wave3 {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns= http://www.w3.org/2000/svg  viewBox= 0 0 1200 100  preserveAspectRatio= none ><path d= M0 20 C250 60 500 0 600 20 C700 40 950 0 1200 20 L1200 100 L0 100 Z  fill= %23ffffff /></svg>");
+    bottom: 2px;
+    opacity:0.22;
+    animation: waveAnim 8s linear infinite;
+}
 
 @keyframes waveAnim {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
 
-/* ------------------- EMOJI WAVE (above waves) ------------------ */
 .emoji-wave {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 120px; /* just above the waves */
+    bottom: 120px;
     height: 60px;
     z-index: 8;
     pointer-events: none;
@@ -265,16 +263,13 @@ h1 {
     gap: 18px;
     font-size: 30px;
 }
+
 .emoji-wave span {
     display: inline-block;
     transform-origin: center;
     animation: emojiFloat 2.6s ease-in-out infinite;
 }
-.emoji-wave span:nth-child(1){ animation-delay: 0s; }
-.emoji-wave span:nth-child(2){ animation-delay: 0.2s; }
-.emoji-wave span:nth-child(3){ animation-delay: 0.4s; }
-.emoji-wave span:nth-child(4){ animation-delay: 0.6s; }
-.emoji-wave span:nth-child(5){ animation-delay: 0.8s; }
+
 @keyframes emojiFloat {
     0% { transform: translateY(0) rotate(-3deg); opacity: 0.9; }
     25% { transform: translateY(-14px) rotate(0deg); opacity: 1; }
@@ -282,41 +277,23 @@ h1 {
     75% { transform: translateY(-8px) rotate(0deg); opacity: 1; }
     100% { transform: translateY(0) rotate(-3deg); opacity: 0.9; }
 }
-
-/* responsive */
-@media (max-width: 600px) {
-    .christmas-tree { font-size: 64px; }
-    .login-box { padding: 28px 18px; border-radius: 20px; }
-    h1 { font-size: 2.4em; }
-    .year-tag { padding: 8px 18px; font-size: 1.05em; }
-    .bulb { width: 14px; height: 24px; }
-    .emoji-wave { font-size: 24px; gap: 12px; bottom: 100px; }
-}
 </style>
 </head>
 <body>
 
-<!-- Stars -->
 <div class="stars" id="stars"></div>
 
-<!-- Bulbs Top -->
 <div class="bulbs-top" id="bulbTop"></div>
-
-<!-- Bulbs Left -->
 <div class="side-bulbs-left" id="bulbLeft"></div>
-
-<!-- Bulbs Right -->
 <div class="side-bulbs-right" id="bulbRight"></div>
 
-<!-- Waves Bottom -->
-<div class="waves" aria-hidden="true">
+<div class="waves">
     <div class="wave wave1"></div>
     <div class="wave wave2"></div>
     <div class="wave wave3"></div>
 </div>
 
-<!-- Emoji wave (floating emojis above waves) -->
-<div class="emoji-wave" aria-hidden="true">
+<div class="emoji-wave">
     <span>💖</span>
     <span>🎄</span>
     <span>☃️</span>
@@ -324,21 +301,20 @@ h1 {
     <span>❄️</span>
 </div>
 
-<!-- LOGIN BOX -->
-<div class="login-box" role="main" aria-labelledby="siteTitle">
+<div class="login-box">
     <div class="year-tag">2026</div>
-    <div class="christmas-tree" aria-hidden="true">🎄</div>
-    <h1 id="siteTitle">Christmas</h1>
+    <div class="christmas-tree">🎄</div>
+    <h1>Christmas</h1>
     <p class="subtitle">enter password</p>
 
-    <input id="pass" class="password-input" type="password" placeholder="Password" aria-label="Password">
-    <button class="login-btn" onclick="checkPass()" aria-label="unlock">unlock 🔓</button>
+    <input id="pass" class="password-input" type="password" placeholder="Password">
+    <button class="login-btn" onclick="checkPass()">unlock 🔓</button>
 
-    <div id="error" aria-live="polite"></div>
+    <div id="error"></div>
 </div>
 
 <script>
-/* ---------------- Stars ---------------- */
+/* Stars */
 const stars = document.getElementById("stars");
 for (let i = 0; i < 140; i++) {
     let s = document.createElement("div");
@@ -349,8 +325,8 @@ for (let i = 0; i < 140; i++) {
     stars.appendChild(s);
 }
 
-/* ---------------- Bulbs creation ---------------- */
-const colors = ["#e53935","#ffeb3b","#2196f3","#4caf50","#9c27b0"]; // red,yellow,blue,green,purple
+/* Bulbs */
+const colors = ["#e53935","#ffeb3b","#2196f3","#4caf50","#9c27b0"];
 
 function createBulbElement(color) {
     const b = document.createElement("div");
@@ -360,23 +336,16 @@ function createBulbElement(color) {
     return b;
 }
 
-// fill top row
 const topRow = document.getElementById("bulbTop");
-for (let i = 0; i < 14; i++) {
-    topRow.appendChild(createBulbElement(colors[i % colors.length]));
-}
-// left column
-const leftCol = document.getElementById("bulbLeft");
-for (let i = 0; i < 11; i++) {
-    leftCol.appendChild(createBulbElement(colors[(i+2) % colors.length]));
-}
-// right column
-const rightCol = document.getElementById("bulbRight");
-for (let i = 0; i < 11; i++) {
-    rightCol.appendChild(createBulbElement(colors[(i+4) % colors.length]));
-}
+for (let i = 0; i < 14; i++) topRow.appendChild(createBulbElement(colors[i % colors.length]));
 
-/* ---------------- Snow ---------------- */
+const leftCol = document.getElementById("bulbLeft");
+for (let i = 0; i < 11; i++) leftCol.appendChild(createBulbElement(colors[(i+2) % colors.length]));
+
+const rightCol = document.getElementById("bulbRight");
+for (let i = 0; i < 11; i++) rightCol.appendChild(createBulbElement(colors[(i+4) % colors.length]));
+
+/* Snow */
 setInterval(()=>{
     let s=document.createElement("div");
     s.className="snowflake";
@@ -388,13 +357,14 @@ setInterval(()=>{
     setTimeout(()=>s.remove(),12000);
 },220);
 
-/* -------- Password Check (immediate navigation) -------- */
+/* Password */
 function checkPass(){
     const p = document.getElementById("pass").value.trim();
-    if (p === "‎1492004") {
+    if (p === "1492004") {
         window.location.href = "love.html";
     } else {
-        document.getElementById("error").innerHTML = "<div class= error-msg >عيد ميلادك غلط يا قلبي 🎄🫶🏼</div>";
+        document.getElementById("error").innerHTML =
+            "<div class= error-msg >عيد ميلادك غلط يا قلبي 🎄🫶🏼</div>";
     }
 }
 </script>
